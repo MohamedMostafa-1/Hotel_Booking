@@ -1,0 +1,21 @@
+@import "tailwindcss";
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+
+
+:root{
+  --light: "#FFF5E6", 
+  --sand: "#F4C27F", 
+  --brown: "#8B5E3C", 
+  --dark: "#3E2F27", 
+  --orange: "#E67E22",
+  --burn: "#D35400",
+}
+
+
+
+body {
+ 
+  font-family: Arial, Helvetica, sans-serif;
+}
