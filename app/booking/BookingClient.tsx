@@ -30,7 +30,7 @@ const BookingClient = () => {
   };
 
   return (
-    <section className="bg-[#FFF5E6] min-h-screen flex flex-col items-center px-4 md:px-10 py-16 mt-15">
+     <section className="bg-[#FFF5E6] min-h-screen flex flex-col items-center px-4 md:px-10 py-16 mt-15">
       <div className="w-full bg-white rounded-3xl shadow-lg overflow-hidden grid md:grid-cols-2">
         {/* صورة الغرفة */}
         <div className="relative w-full h-80 md:h-auto md:min-h-full">
@@ -133,4 +133,9 @@ const BookingClient = () => {
   );
 };
 
-export default BookingPage;
+export default BookingClient;
+
+
+
+
+ 
