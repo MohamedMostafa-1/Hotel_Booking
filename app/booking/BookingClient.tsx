@@ -1,3 +1,4 @@
+// app/booking/BookingClient.tsx
 "use client";
 
 import { useSearchParams } from "next/navigation";
@@ -6,11 +7,9 @@ import Image from "next/image";
 import { rooms } from "@/data/rooms";
 import { toast } from "sonner";
 
-
-const BookingPage = () => {
-  const params = useSearchParams(); // لجلب roomId من query
-  const roomId = params.get("roomId"); // دا ممكن يكون null
-  // Fallback: لو roomId مش موجود أو غلط، اختر أول غرفة
+const BookingClient = () => {
+  const params = useSearchParams();
+  const roomId = params.get("roomId");
   const room = rooms.find((r) => r.id === Number(roomId)) || rooms[0];
 
   const [formData, setFormData] = useState({
@@ -27,13 +26,7 @@ const BookingPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Booking Confirmed 🎉", {
-        description: `
-    ${formData.name}
-    ${formData.checkIn} → ${formData.checkOut}
-    Guests: ${formData.guests}
-        `,
-    });
+    toast.success("Booking Confirmed 🎉");
   };
 
   return (
