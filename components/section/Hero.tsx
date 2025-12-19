@@ -6,7 +6,7 @@ const Hero = () => {
    <div className="relative m-0 p-0 w-full h-screen">
       {/* خلفية الصورة */}
       <Image
-        src="/Hero1.jpg"
+        src="/Hero2.jpg"
         alt="Hero section"
         fill
         className="object-cover"

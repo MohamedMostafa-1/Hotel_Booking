@@ -2,6 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
+import { rooms } from "@/data/rooms";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Styles
@@ -10,109 +12,8 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 import { Pagination, Autoplay } from "swiper/modules";
+import Link from "next/link";
 
-const hotel = [
-  {
-    id: 1,
-    name: "Royal Nile View Room",
-    type: "Deluxe Room",
-    pricePerNight: 220,
-    guests: 2,
-    bedType: "King Bed",
-    rating: 4.8,
-    images: "/rooms/room1.webp",
-  },
-  {
-    id: 2,
-    name: "Desert Oasis Suite",
-    type: "Luxury Suite",
-    pricePerNight: 350,
-    guests: 4,
-    bedType: "2 Queen Beds",
-    rating: 4.9,
-    images: "/rooms/room2.jpg",
-  },
-  {
-    id: 3,
-    name: "Pyramid View Room",
-    type: "Standard Room",
-    pricePerNight: 150,
-    guests: 2,
-    bedType: "Queen Bed",
-    rating: 4.5,
-    images: "/rooms/room3.jpg",
-  },
-  {
-    id: 4,
-    name: "Pharaoh Royal Suite",
-    type: "Presidential Suite",
-    pricePerNight: 500,
-    guests: 5,
-    bedType: "King Bed + Sofa Bed",
-    rating: 5.0,
-    images: "/rooms/room4.jpg",
-  },
-  {
-    id: 5,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room5.jpg",
-  },
-  {
-    id: 6,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room6.jpg",
-  },
-  {
-    id: 7,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room7.jpg",
-  },
-  {
-    id: 8,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room8.jpg",
-  },
-  {
-    id: 9,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room9.jpg",
-  },
-  {
-    id: 10,
-    name: "Golden Horizon Room",
-    type: "Deluxe Suite",
-    pricePerNight: 280,
-    guests: 3,
-    bedType: "King Bed",
-    rating: 4.7,
-    images: "/rooms/room10.jpg",
-  },
-];
 
 const Rooms = () => {
   return (
@@ -145,7 +46,7 @@ const Rooms = () => {
         modules={[Pagination, Autoplay]}
         className="max-w-7xl mx-auto"
       >
-        {hotel.map((room) => (
+        {rooms.map((room) => (
           <SwiperSlide key={room.id}>
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
               {/* Image */}
@@ -175,9 +76,11 @@ const Rooms = () => {
                   <span className="text-[#3E2F27]">{room.guests} Guests</span>
                 </div>
 
-                <button className="mt-5 w-full bg-[#E67E22] hover:bg-[#D35400] text-white py-2 rounded-lg transition font-semibold text-sm md:text-base">
-                  Book Now
-                </button>
+               <Link href={`/rooms/${room.id}`}>
+                  <button className="mt-5 w-full bg-[#E67E22] hover:bg-[#D35400] text-white py-2 rounded-lg transition font-semibold cursor-pointer">
+                    Book Now
+                  </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
